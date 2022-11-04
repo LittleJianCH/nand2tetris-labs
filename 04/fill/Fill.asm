@@ -28,6 +28,16 @@
     @8192
     D=A
 (DRAWBLACKLOOP)
+    // if key is released, goto DRAWWHITE
+    // I dont know if it's safe to use R0 here
+    @R0
+    M=D
+    @KBD
+    D=M
+    @DRAWWHITE
+    D;JEQ
+    @R0
+    D=M
     // D = D - 1
     D=D-1
     // RAM[SCREEN + D] = -1
@@ -47,6 +57,15 @@
     @8192
     D=A
 (DRAWWHITELOOP)
+    // if key is pressed, goto DRAWBLACK
+    @R0
+    M=D
+    @KBD
+    D=M
+    @DRAWBLACK
+    D;JNE
+    @R0
+    D=M
     // D = D - 1
     D=D-1
     // RAM[SCREEN + D] = 0
