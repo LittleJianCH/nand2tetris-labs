@@ -9,7 +9,6 @@
 // This program only needs to handle arguments that satisfy
 // R0 >= 0, R1 >= 0, and R0*R1 < 32768.
 
-// Put your code here.
     // RAM[2] = 0
     @R2
     M=0
