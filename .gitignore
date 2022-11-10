@@ -15,3 +15,5 @@
 !04/mult/*.asm
 !04/fill
 !04/fill/*.asm
+!05
+!05/*.hdl
